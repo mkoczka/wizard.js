@@ -1,0 +1,23 @@
+{
+  "name": "wizard.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mkoczka/wizard.js",
+  "authors": [
+    "Miro Koczka <usbecko@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  },
+  "devDependencies": {
+    "qunit": "~1.15.0"
+  }
+}

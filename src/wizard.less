@@ -1,0 +1,217 @@
+/*!
+ * wizard.js
+ * Original author: Miro Koczka
+ * Version 0.1
+ * Date: 2014-10-08
+ */
+
+// utils
+.size(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+.square(@size) {
+  .size(@size, @size);
+}
+
+.circle() {
+  border-radius: 50%;
+}
+
+// variables
+@wizard-spritesheet-url: '../Images/wizard_steps_spritesheet.png';
+
+@wizard-bg: #f7f7f7;
+@wizard-border: @wizard-bg;
+
+@wizard-nav-height: 79px;
+@wizard-nav-bg: #fff;
+@wizard-nav-bg-selected: #f0f0e9;
+@wizard-nav-color: #206ba2;
+@wizard-nav-color-active: #fc6916;
+@wizard-nav-color-selected: #69ae10;
+
+// wizard
+.wizard {
+  position: relative;
+  width: 100%;
+  background: @wizard-bg;
+  border: 1px solid @wizard-border;
+  font-family: Roboto, Arial, sans-serif;
+  text-align: left;
+  overflow: hidden;
+
+  & > section {
+    width: 100%;
+    position: absolute;
+    padding: 40px;
+    left: 100%;
+    transition: left .2s;
+  }
+
+  .button-blue {
+    padding: 11px 20px 11px;
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
+
+.pp-wizard-navigation {
+  .size(100%, @wizard-nav-height);
+  background: @wizard-nav-bg;
+  font-size: 19px;
+  color: @wizard-nav-color;
+  text-align: center;
+
+  li {
+    position: relative;
+    display: table-cell;
+    width: 1%;
+    padding: 19px 0;
+    padding-right: 40px;
+    border: 1px solid @wizard-border;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+
+    &.pp-wizard-disabled {
+      opacity: .4;
+      cursor: not-allowed;
+
+      &:hover {
+        color: @wizard-nav-color;
+      }
+    }
+
+    &.pp-wizard-was-selected {
+      background: @wizard-nav-bg-selected;
+      color: @wizard-nav-color-selected;
+      border-right-color: #fff;
+
+      &:before {
+        border-left-color: #fff;
+      }
+
+      &:after {
+        border-left-color: @wizard-nav-bg-selected;
+      }
+
+    }
+
+    &:last-child:after, &:last-child:before {
+      display: none;
+    }
+
+    &.pp-wizard-active {
+      background: @wizard-bg;
+      color: @wizard-nav-color-active;
+      border-right-color: #fff;
+
+      &:before {
+        border-left-color: #fff;
+      }
+
+      &:after {
+        border-left-color: @wizard-bg;
+      }
+
+    }
+
+    &:hover {
+      color: @wizard-nav-color-active;
+    }
+
+    &:after, &:before {
+      left: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    &:after {
+      border-color: rgba(255, 255, 255, 0);
+      border-left-color: #ffffff;
+      border-width: 19px;
+      margin-top: -19px;
+    }
+
+    &:before {
+      border-color: rgba(194, 225, 245, 0);
+      border-left-color: @wizard-border;
+      border-width: 21px;
+      margin-top: -21px;
+    }
+  }
+}
+
+.wizard-title {
+  font-size: 22px !important;
+  font-weight: 400 !important;
+}
+
+.pp-wizard-number {
+  display: inline-block;
+  .square(40px);
+  margin-right: 10px;
+  padding: 5px 0;
+  background: @wizard-bg;
+  .circle();
+  font-size: 26px;
+  font-weight: 400;
+  vertical-align: middle;
+
+  .pp-wizard-active & {
+    background: #fff;
+  }
+
+  .pp-wizard-was-selected & {
+    background: #fff;
+  }
+}
+
+.pp-wizard-nav-img {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  display: inline-block;
+  .square(54px);
+  background: url(@wizard-spritesheet-url) no-repeat 0 0;
+
+  .pp-wizard-navigation li.pp-wizard-was-selected & {
+    background-position: 0 -54px;
+  }
+
+  .pp-wizard-navigation li &, .pp-wizard-navigation li.pp-wizard-active & {
+    background-position: 0 0;
+  }
+
+  .pp-wizard-navigation li.pp-wizard-was-selected:nth-child(2) & {
+    background-position: -54px -54px;
+  }
+
+  .pp-wizard-navigation li:nth-child(2) &, .pp-wizard-navigation li.pp-wizard-active:nth-child(2) & {
+    background-position: -54px 0;
+  }
+
+  .pp-wizard-navigation li.pp-wizard-was-selected:nth-child(3) & {
+    background-position: (-54px*2) -54px;
+  }
+
+  .pp-wizard-navigation li:nth-child(3) &, .pp-wizard-navigation li.pp-wizard-active:nth-child(3) & {
+    background-position: (-54px*2) 0;
+  }
+
+  .pp-wizard-navigation li.pp-wizard-was-selected:nth-child(4) & {
+    background-position: (-54px*3) -54px;
+  }
+
+  .pp-wizard-navigation li:nth-child(4) &, .pp-wizard-navigation li.pp-wizard-active:nth-child(4) & {
+    background-position: (-54px*3) 0;
+  }
+}

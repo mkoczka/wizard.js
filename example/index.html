@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wizard.js</title>
+    <link rel="stylesheet" href="../dist/wizard.css">
+</head>
+<body>
+
+    <div class="wizard">
+
+        <section title="Wizard section 1">
+            <h1>Wizard section 1</h1>
+        </section>
+
+        <section title="Wizard section 2">
+            <h1>Wizard section 2</h1>
+        </section>
+
+        <section title="Wizard section 3">
+            <h1>Wizard section 3</h1>
+        </section>
+
+        <section title="Wizard section 4">
+            <h1>Wizard section 4</h1>
+        </section>
+
+    </div>
+
+</body>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="../dist/wizard.js"></script>
+<script>
+    (function($){
+        $('.wizard').wizard();
+    })(jQuery);
+</script>
+</html>
