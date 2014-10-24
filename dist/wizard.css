@@ -1,0 +1,165 @@
+/*!
+ * wizard.js
+ * Original author: Miro Koczka
+ * Version 0.1
+ * Date: 2014-10-08
+ */
+.wizard {
+  position: relative;
+  width: 100%;
+  background: #f7f7f7;
+  border: 1px solid #f7f7f7;
+  font-family: Roboto, Arial, sans-serif;
+  text-align: left;
+  overflow: hidden;
+}
+.wizard > section {
+  width: 100%;
+  position: absolute;
+  padding: 40px;
+  left: 100%;
+  transition: left .2s;
+}
+.wizard .button-blue {
+  padding: 11px 20px 11px;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+.pp-wizard-navigation {
+  width: 100%;
+  height: 79px;
+  background: #ffffff;
+  font-size: 19px;
+  color: #206ba2;
+  text-align: center;
+}
+.pp-wizard-navigation li {
+  position: relative;
+  display: table-cell;
+  width: 1%;
+  padding: 19px 0;
+  padding-right: 40px;
+  border: 1px solid #f7f7f7;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+.pp-wizard-navigation li.pp-wizard-disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+.pp-wizard-navigation li.pp-wizard-disabled:hover {
+  color: #206ba2;
+}
+.pp-wizard-navigation li.pp-wizard-was-selected {
+  background: #f0f0e9;
+  color: #69ae10;
+  border-right-color: #fff;
+}
+.pp-wizard-navigation li.pp-wizard-was-selected:before {
+  border-left-color: #fff;
+}
+.pp-wizard-navigation li.pp-wizard-was-selected:after {
+  border-left-color: #f0f0e9;
+}
+.pp-wizard-navigation li:last-child:after,
+.pp-wizard-navigation li:last-child:before {
+  display: none;
+}
+.pp-wizard-navigation li.pp-wizard-active {
+  background: #f7f7f7;
+  color: #fc6916;
+  border-right-color: #fff;
+}
+.pp-wizard-navigation li.pp-wizard-active:before {
+  border-left-color: #fff;
+}
+.pp-wizard-navigation li.pp-wizard-active:after {
+  border-left-color: #f7f7f7;
+}
+.pp-wizard-navigation li:hover {
+  color: #fc6916;
+}
+.pp-wizard-navigation li:after,
+.pp-wizard-navigation li:before {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+.pp-wizard-navigation li:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-left-color: #ffffff;
+  border-width: 19px;
+  margin-top: -19px;
+}
+.pp-wizard-navigation li:before {
+  border-color: rgba(194, 225, 245, 0);
+  border-left-color: #f7f7f7;
+  border-width: 21px;
+  margin-top: -21px;
+}
+.wizard-title {
+  font-size: 22px !important;
+  font-weight: 400 !important;
+}
+.pp-wizard-number {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  padding: 5px 0;
+  background: #f7f7f7;
+  border-radius: 50%;
+  font-size: 26px;
+  font-weight: 400;
+  vertical-align: middle;
+}
+.pp-wizard-active .pp-wizard-number {
+  background: #fff;
+}
+.pp-wizard-was-selected .pp-wizard-number {
+  background: #fff;
+}
+.pp-wizard-nav-img {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  display: inline-block;
+  width: 54px;
+  height: 54px;
+  background: url('../Images/wizard_steps_spritesheet.png') no-repeat 0 0;
+}
+.pp-wizard-navigation li.pp-wizard-was-selected .pp-wizard-nav-img {
+  background-position: 0 -54px;
+}
+.pp-wizard-navigation li .pp-wizard-nav-img,
+.pp-wizard-navigation li.pp-wizard-active .pp-wizard-nav-img {
+  background-position: 0 0;
+}
+.pp-wizard-navigation li.pp-wizard-was-selected:nth-child(2) .pp-wizard-nav-img {
+  background-position: -54px -54px;
+}
+.pp-wizard-navigation li:nth-child(2) .pp-wizard-nav-img,
+.pp-wizard-navigation li.pp-wizard-active:nth-child(2) .pp-wizard-nav-img {
+  background-position: -54px 0;
+}
+.pp-wizard-navigation li.pp-wizard-was-selected:nth-child(3) .pp-wizard-nav-img {
+  background-position: -108px -54px;
+}
+.pp-wizard-navigation li:nth-child(3) .pp-wizard-nav-img,
+.pp-wizard-navigation li.pp-wizard-active:nth-child(3) .pp-wizard-nav-img {
+  background-position: -108px 0;
+}
+.pp-wizard-navigation li.pp-wizard-was-selected:nth-child(4) .pp-wizard-nav-img {
+  background-position: -162px -54px;
+}
+.pp-wizard-navigation li:nth-child(4) .pp-wizard-nav-img,
+.pp-wizard-navigation li.pp-wizard-active:nth-child(4) .pp-wizard-nav-img {
+  background-position: -162px 0;
+}
