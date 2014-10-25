@@ -1,4 +1,6 @@
-wizard.js
+[![Build Status](https://travis-ci.org/mkoczka/wizard.js.svg?branch=master)](https://travis-ci.org/mkoczka/wizard.js)
+
+wizard.js 
 =========
 
 ### TODO:
