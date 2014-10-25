@@ -1,6 +1,11 @@
 
 var gulp = require('gulp'),
-    $ = require('gulp-load-plugins')();
+    $ = require('gulp-load-plugins')(),
+    qunit = require('node-qunit-phantomjs');
+
+gulp.task('test', function() {
+    qunit('./tests/index.html');
+});
 
 gulp.task('style', function() {
     gulp.src('src/wizard.less')
@@ -16,8 +21,4 @@ gulp.task('script', function() {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('test', function() {
-    gulp.src('')
-});
-
-gulp.task('default', ['style', 'script']);
+gulp.task('default', ['style', 'script', 'test']);
