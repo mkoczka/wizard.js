@@ -1,7 +1,6 @@
-[![Build Status](https://travis-ci.org/mkoczka/wizard.js.svg?branch=master)](https://travis-ci.org/mkoczka/wizard.js)
-
 wizard.js 
 =========
+[![Build Status](https://travis-ci.org/mkoczka/wizard.js.svg?branch=master)](https://travis-ci.org/mkoczka/wizard.js) [![devDependency Status](https://david-dm.org/mkoczka/wizard.js/dev-status.svg)](https://david-dm.org/mkoczka/wizard.js#info=devDependencies)
 
 ### TODO:
 
