@@ -6,6 +6,13 @@ wizard.js
 
 1. Add themes
 1. Make example website
+1. Write HOW TO, descriptions, about, ...
 1. Separate themes from scripts
 1. Add to bower
 1. Tests and code improvements
+
+#### Example Website TODOS:
+
+1. Analytics
+1. Favicon
+1. Add Browser happy
